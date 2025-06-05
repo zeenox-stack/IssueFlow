@@ -9,7 +9,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/github/callback",
+      callbackURL: "https://issueflow-kyr6.onrender.com/auth/github/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       try {

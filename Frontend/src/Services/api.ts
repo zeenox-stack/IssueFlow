@@ -2,7 +2,7 @@ import axios from "axios";
 import { FormType } from "../Features/projects/createProjects/CreateProjects";
 import { IssueType } from "../Features/Issues/createIssues/CreateIssues";
 
-const backend = "http://localhost:3000";
+const backend = "https://issueflow-kyr6.onrender.com";
 
 export const handleGetProjects = async () => {
   try {

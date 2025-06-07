@@ -1,6 +1,6 @@
 export const isAuthenticated = async (): Promise<boolean> => {
   try {
-    const response = await fetch("http://localhost:3000/dashboard", {
+    const response = await fetch("https://issueflow-kyr6.onrender.com/dashboard", {
       method: "GET",
       credentials: "include",
     });

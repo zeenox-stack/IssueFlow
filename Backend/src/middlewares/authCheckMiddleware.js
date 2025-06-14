@@ -4,9 +4,6 @@ module.exports = (req, res, next) => {
     req.user = req.session.user;
     return next();
   } else {
-    res.status(401).json({
-      message: "Unauthorized",
-    });
     res.redirect(process.env.FRONTEND_URL + "/auth/login");
   }
 };

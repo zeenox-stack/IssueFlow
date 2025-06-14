@@ -13,7 +13,7 @@ router.get(
 router.get(
   "/github/callback",
   passport.authenticate("github", {
-    failureRedirect: process.env.FRONTEND_URL + "/",
+    failureRedirect: process.env.FRONTEND_URL + "/auth/login",
   }),
   (req, res) => {
     req.session.user = req.user;
@@ -22,8 +22,9 @@ router.get(
         console.error("Error: ", err);
         return res.status(500).json({ error: "Error logging in" });
       }
+
+      res.redirect(process.env.FRONTEND_URL + "/dashboard");
     });
-    res.redirect(process.env.FRONTEND_URL + "/dashboard");
   }
 );
 

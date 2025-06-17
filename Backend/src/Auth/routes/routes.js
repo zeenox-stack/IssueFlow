@@ -17,11 +17,11 @@ router.get(
   }),
   (req, res) => {
     // req.session.user = req.user;
-    req.session.save((err) => {
-      if (err) {
-        console.error("Error: ", err);
-        return res.status(500).json({ error: "Error logging in" });
-      }
+    // req.session.save((err) => {
+    //   if (err) {
+    //     console.error("Error: ", err);
+    //     return res.status(500).json({ error: "Error logging in" });
+    //   }
 
       res.redirect(process.env.FRONTEND_URL + "/dashboard");
     });

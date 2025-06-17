@@ -23,8 +23,8 @@ router.get(
     //     return res.status(500).json({ error: "Error logging in" });
     //   }
 
-      res.redirect(process.env.FRONTEND_URL + "/dashboard");
-    });
+    //   res.redirect(process.env.FRONTEND_URL + "/dashboard");
+    // });
   }
 );
 

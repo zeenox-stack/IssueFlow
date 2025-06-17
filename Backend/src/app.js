@@ -38,9 +38,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/auth", authRoutes);
-app.use(authMiddleware);
+// app.use(authMiddleware);
 
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", authMiddleware, (req, res) => {
   res.status(200).send("Authorized");
 });
 

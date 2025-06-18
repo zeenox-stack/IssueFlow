@@ -16,7 +16,7 @@ router.get(
     failureRedirect: process.env.FRONTEND_URL + "/auth/login",
   }),
   (req, res, next) => {
-    req.login(req, (error) => {
+    req.login(req.user, (error) => {
      if (error) return next(error); 
       console.log("user on login callback:", req.user);
       console.log("session before save:", req.session);

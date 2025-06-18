@@ -15,7 +15,7 @@ router.get(
   passport.authenticate("github", {
     failureRedirect: process.env.FRONTEND_URL + "/auth/login",
   }),
-  (req, res) => {
+  (req, res, next) => {
     req.login(req, (error) => {
      if (error) return next(error); 
       console.log("user on login callback:", req.user);

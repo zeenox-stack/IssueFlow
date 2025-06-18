@@ -17,18 +17,19 @@ router.get(
   }),
   (req, res, next) => {
     req.login(req.user, (error) => {
-     if (error) return next(error); 
+      if (error) return next(error); 
+
       console.log("user on login callback:", req.user);
       console.log("session before save:", req.session);
 
-       req.session.save((err) => {
-      if (err) {
-        console.error("Error: ", err);
-        return res.status(500).json({ error: "Error logging in" });
-      }
+      req.session.save((err) => {
+        if (err) {
+          console.error("Error: ", err);
+          return res.status(500).json({ error: "Error logging in" });
+        }
 
-      res.redirect(process.env.FRONTEND_URL + "/dashboard");
-    });
+        res.redirect(process.env.FRONTEND_URL + "/dashboard");
+      });
     });
   }
 );
